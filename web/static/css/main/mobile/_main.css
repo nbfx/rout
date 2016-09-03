@@ -1,0 +1,39 @@
+.main {
+    background-color: white;
+    background-image: url('../../images/Logo.svg');
+    background-position: center 40%;
+    background-size: 130%;
+    background-repeat: no-repeat;
+}
+
+.main .move {
+    margin: auto;
+    position: absolute;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 20% !important;
+}
+
+.address {
+    color: #828282;
+    width: 30%;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 10%;
+    font-size: 4vw;
+}
+
+#address {
+    color: #828282;
+    width: 30%;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 10%;
+    font-size: 4vw;
+}

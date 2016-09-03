@@ -1,0 +1,11 @@
+<section class="scrolling section {{ page.classes }}" id="{{ page.name }}">
+    <div class="top">
+        {% block top %}
+            {% include 'parts/urls.html.twig' %}
+            <a href="blog">блог проекта >>></a>
+        {% endblock top %}
+    </div>
+    <div class="bottom">
+        {% block bottom %}{% endblock bottom %}
+    </div>
+</section>

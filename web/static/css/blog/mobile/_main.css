@@ -1,0 +1,38 @@
+.main_loader_container {
+    background-color: white;
+    background-image: url('../../../images/Logo.svg');
+    background-position: center 40%;
+    background-size: 130%;
+    background-repeat: no-repeat;
+    transition: all 2s;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    opacity: 1;
+}
+
+#main_loader {
+    margin: 0;
+    height: auto;
+    width: 70%;
+    max-width: 200px;
+}
+
+.address {
+    color: #828282;
+    width: 30%;
+    text-align: center;
+    font-size: 4vw;
+    font-family: OpenSans;
+}
+
+
