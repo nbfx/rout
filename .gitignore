@@ -1,0 +1,6 @@
+/vendor/
+/.idea/
+README.md
+CONTRIBUTING.md
+/app/db/Connect.php
+/app/db/pages.sql

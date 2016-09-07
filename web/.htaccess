@@ -1,0 +1,33 @@
+RewriteEngine On
+
+# Some hosts may require you to use the `RewriteBase` directive.
+# If you need to use the `RewriteBase` directive, it should be the
+# absolute physical path to the directory that contains this htaccess file.
+#
+# RewriteBase /
+# ErrorDocument 404 errors/404.html
+#
+# order deny,allow
+# deny from all
+# allow from 192.168.0.0/24
+# ||
+# order allow,deny
+# deny from 83.222.23.219
+# allow from all
+#
+# Variables
+#SetEnv SITE_WEBMASTER &quot;Jack Sprat&quot;
+#SetEnv SITE_WEBMASTER_URI mailto:Jack.Sprat@characterology.com
+#
+#UnSetEnv REMOTE_ADDR
+#
+# 301
+#Redirect 301 /old/file.html http://yourdomain.com/new/file.html
+#
+# More.. http://viralpatel.net/blogs/21-very-useful-htaccess-tips-tricks/
+
+DirectoryIndex app.php
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ app.php [QSA,L]
+#RewriteRule ^ fuck.php [QSA,L]
