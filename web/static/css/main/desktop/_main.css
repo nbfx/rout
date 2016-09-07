@@ -1,0 +1,41 @@
+@media screen and (orientation: landscape) {
+    .main {
+        background-position: center;
+        background-size: 65%;
+    }
+
+    .main .move {
+        top: 77.5%;
+        width: 50%;
+    }
+
+    .main .move * {
+        font-size: 3vw;
+    }
+
+    .address {
+        top: 80%;
+        font-size: 2vw;
+    }
+
+}
+
+@media screen and (orientation: landscape) and (min-width: 1250px) {
+    .main {
+        background-size: 50%;
+    }
+
+    .main .move {
+        top: 77.5%;
+        width: 40%;
+    }
+
+    .main .move * {
+        font-size: 2.25vw;
+    }
+
+    .address {
+        top: 80%;
+        font-size: 1.5vw;
+    }
+}

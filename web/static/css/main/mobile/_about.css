@@ -1,0 +1,40 @@
+.about .top {
+    background-color: #ea7349;
+}
+
+.about h1 {
+    color: white;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.about .top>a {
+    font-family: 'Nickainley';
+    color: white;
+    font-size: 7vw;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.about .bottom div {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0 2vw;
+}
+
+.about .bottom div h4 {
+    margin: 2vw 0 1vw 0;
+    font-size: 4vw;
+}
+
+.about .bottom div p {
+    font-size: 3vw;
+    text-transform: none;
+    text-align: left;
+    font-weight: 400;
+    color: black;
+}
+

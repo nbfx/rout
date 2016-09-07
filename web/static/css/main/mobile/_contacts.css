@@ -1,0 +1,79 @@
+.contacts .bottom {
+    justify-content: space-around;
+}
+
+.contacts .bottom p {
+    font-size: 4vw;
+    color: #000000;
+    width: 80%;
+    text-align: left;
+}
+
+.contacts .top {
+    background-color:#129e92;
+}
+
+.contacts h1 {
+    color: white;
+    margin: auto 0;
+}
+
+.contacts .move {
+    margin-bottom: 5vw;
+}
+
+.contacts .bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 10%;
+}
+
+.social {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social a {
+    height: 100%;
+    width: 40%;
+}
+
+.social img {
+    width: 100%;
+    height: auto;
+}
+
+.bottom form {
+    width: 80%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.bottom form textarea {
+    width: 97.5%;
+    height: 70%;
+    font-size: 3vw;
+    border: 5px solid #ea7349;
+    margin-bottom: 2vw;
+}
+
+.bottom form input[type="submit"] {
+    align-self: flex-end;
+    width: 50%;
+    height: 20%;
+    font-size: 4vw;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    background-color: #ea7349;
+}
+
+.bottom form input[type="submit"]:active {
+    box-shadow: inset 0 0 3px 3px lightgrey;
+}
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1, user-scalable=no">
+    <!-- smoosh -->
+    <!-- build:css css/main.css -->
+    <link rel="stylesheet" href="../../../static/css/blog/main.css">
+    <!-- endbuild -->
+    <!-- endsmoosh -->
+</head>
+<body>
+<div class="main_loader_container">
+    <img id="main_loader" src="./../../../static/images/honeycomb_loader.gif" alt="">
+    <p class="address">
+        Новосибирск<br>2016
+    </p>
+</div>
+<section class="main" id="main">
+    <nav>
+        <div>
+            <h1>Блог</h1>
+            <div id="authors">
+                <h3>Авторы</h3>
+            </div>
+            <div id="visitors">
+                <h3>Посетители</h3>
+            </div>
+            <div id="children">
+                <h3>Детский</h3>
+            </div>
+            <div id="adult">
+                <h3>Взрослый</h3>
+            </div>
+            <div id="business">
+                <h3>Руководству</h3>
+            </div>
+        </div>
+        <a href="index"><<< назад к сайту</a>
+    </nav>
+    <section>
+        <img id="spinner" src="./../../../static/images/spinner.gif" alt="">
+        <div>
+            <h3 id="title"></h3>
+            <h4 id="author"></h4>
+        </div>
+        <div id="topics"></div>
+        <div id="article">
+        </div>
+        <p id="all">читать полностью >></p>
+    </section>
+</section>
+<script src="../../../static/js/blog.js"></script>
+</body>
+</html>

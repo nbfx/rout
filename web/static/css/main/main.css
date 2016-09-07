@@ -1,0 +1,1010 @@
+@font-face {
+    font-family: 'OpenSans';
+    src: url(../../fonts/OpenSansRegular.ttf)
+}
+
+@font-face {
+    font-family: 'Nickainley';
+    src: url(../../fonts/Nickainley-Normal.otf)
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    border-left: 1px solid #828282
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px #000
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 15px #0c0c0c
+}
+
+html * {
+    margin: 0;
+    padding: 0;
+    font-family: OpenSans
+}
+
+.bottom, .top, section {
+    width: 100%;
+    overflow: hidden
+}
+
+section {
+    height: 100vh;
+    border-bottom: 1px solid #000;
+    position: relative
+}
+
+.bottom, .top {
+    height: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transition: all .5s ease-in;
+    transition: all .5s ease-in
+}
+
+.top {
+    z-index: 10
+}
+
+.bottom {
+    z-index: 9
+}
+
+.directions_title, .bottom h2 {
+    -webkit-transition: opacity .6s ease-out;
+    transition: opacity .6s ease-out;
+}
+
+.cross {
+    width: 22.5vw;
+    height: 22.5vw;
+    position: absolute;
+    right: 1vw;
+    top: 1vw;
+    opacity: 0;
+    -webkit-transition: opacity .6s ease-out;
+    transition: opacity .6s ease-out;
+    z-index: 20
+}
+
+.cross:after, .cross:before {
+    -webkit-transition: all 0.6s 0s ease-in-out;
+    transition: all 0.6s 0s ease-in-out;
+    content: '';
+    position: absolute;
+    width: .5vw;
+    height: 7.5vw;
+    background-color: #fff;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto
+}
+
+.cross:before {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.cross:after {
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg)
+}
+
+.cross polygon {
+    fill: #0f220f;
+}
+
+.cross svg, .cross polygon, .honeycomb_interior {
+    pointer-events: none;
+}
+
+.honeycomb::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.cross:hover:before, .cross:hover:after {
+    -webkit-transform: rotate(495deg);
+    transform: rotate(450deg);
+}
+
+.cross:hover > svg polygon, .honeycomb:hover > :first-child ~ svg polygon {
+    cursor: pointer;
+    fill-opacity: .8
+}
+
+.cross:hover {
+    cursor: pointer;
+}
+
+.top h1 {
+    font-family: 'Nickainley';
+    font-size: 13vw;
+    font-weight: 200
+}
+
+.honeycombs {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start
+}
+
+.move {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    list-style: none;
+    width: 80%;
+    margin: 0;
+}
+
+.move * {
+    font-size: 4vw;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.move a {
+    text-decoration: none;
+    color: #000;
+}
+
+.move a:hover {
+    cursor: pointer;
+    text-decoration: underline
+}
+
+.honeycombs_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 50%;
+    left: 0;
+    position: relative;
+    -webkit-transition: left .5s ease-in;
+    transition: left .5s ease-in
+}
+
+.honeycomb {
+    cursor: pointer;
+    width: 22.5vw;
+    height: 22.5vw;
+    position: absolute
+}
+
+.honeycomb div {
+    position: absolute;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: 4vw;
+    color: #fff;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    font-weight: 600
+}
+
+.top .honeycombs_container .honeycomb:first-child {
+    margin: auto;
+    top: 0;
+    bottom: 15vw;
+    left: 0;
+    right: 0
+}
+
+.top .honeycombs_container .honeycomb:nth-child(2) {
+    margin: auto;
+    top: 0;
+    bottom: -20vw;
+    left: 20vw;
+    right: 0
+}
+
+.top .honeycombs_container .honeycomb:last-child {
+    margin: auto;
+    top: 0;
+    bottom: -20vw;
+    left: 0;
+    right: 20vw
+}
+
+.bottom h2, .bottom p {
+    color: #fff
+}
+
+.bottom h2 {
+    font-size: 4vh;
+    text-transform: uppercase;
+    font-weight: 800
+}
+
+.bottom p {
+    text-align: center;
+    font-weight: 200;
+}
+
+.bottom .honeycombs_container .honeycomb:first-child {
+    margin: auto;
+    top: 0;
+    bottom: -20vw;
+    left: 0;
+    right: 0
+}
+
+.bottom .honeycombs_container .honeycomb:nth-child(2) {
+    margin: auto;
+    top: 0;
+    bottom: 15vw;
+    left: 20vw;
+    right: 0
+}
+
+.bottom .honeycombs_container .honeycomb:last-child {
+    margin: auto;
+    top: 0;
+    bottom: 15vw;
+    left: 0;
+    right: 20vw
+}
+
+polygon {
+    fill-opacity: .3;
+    stroke: none;
+    vector-effect: non-scaling-stroke;
+    -webkit-transition: all .5s;
+    transition: all .5s
+}
+
+
+
+.top polygon {
+    fill: #129e92
+}
+
+.top .honeycomb_interior {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0
+}
+
+.bottom polygon, .top g * {
+    fill: #fff
+}
+
+.top g {
+
+}
+
+.top g *, polygon:hover, .active > svg polygon {
+    fill-opacity: .8;
+}
+
+.article, .text {
+    position: absolute;
+    left: 100vw;
+    -webkit-transition: left .5s ease-in;
+    transition: left .5s ease-in
+}
+
+.article {
+    background-color: #fff;
+    overflow-y: auto;
+    padding: 1vw 1.5vw;
+    top: 70%;
+    height: 23%;
+    width: 97%;
+    z-index: 50
+}
+
+.article p {
+    color: #000;
+    font-size: 3.5vw;
+    text-align: left
+}
+
+.text {
+    color: #fff;
+    right: 0;
+    margin: auto;
+    bottom: 1vw
+}
+
+@media screen and (min-width: 768px) and (orientation: portrait) {
+    .cross, .honeycomb {
+        width: 17.5vw;
+        height: 17.5vw
+    }
+
+    .directions .bottom p {
+        font-size: 1.5vh;
+    }
+
+    .honeycomb div {
+        font-size: 3vw
+    }
+
+    .top .honeycombs_container .honeycomb:first-child {
+        bottom: 11vw
+    }
+
+    .top .honeycombs_container .honeycomb:nth-child(2) {
+        bottom: -15vw;
+        left: 15vw
+    }
+
+    .top .honeycombs_container .honeycomb:last-child {
+        bottom: -15vw;
+        right: 15vw
+    }
+
+    .bottom .honeycombs_container .honeycomb:first-child {
+        bottom: -15vw
+    }
+
+    .bottom .honeycombs_container .honeycomb:nth-child(2) {
+        bottom: 11vw;
+        left: 15vw
+    }
+
+    .bottom .honeycombs_container .honeycomb:last-child {
+        bottom: 11vw;
+        right: 15vw
+    }
+
+    .article {
+        bottom: 7.5vw
+    }
+}
+
+.main {
+    background-color: #fff;
+    background-image: url(../../images/Logo.svg);
+    background-position: center 40%;
+    background-size: 130%;
+    background-repeat: no-repeat
+}
+
+.address, .main .move {
+    margin: auto;
+    position: relative;
+    top: 75%
+}
+
+.address {
+    color: #828282;
+    width: 30%;
+    text-align: center;
+    top: 85%;
+    font-size: 4vw
+}
+
+.about .top {
+    background-color: #ea7349
+}
+
+.about h1 {
+    color: #fff;
+    margin-bottom: auto;
+    margin-top: auto
+}
+
+.about .top > a, .contacts .top > a {
+    font-family: 'Nickainley';
+    color: #fff;
+    font-size: 7vw;
+    cursor: pointer;
+    text-decoration: none
+}
+
+.about .bottom div {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    overflow-x: hidden;
+    /*overflow-y: auto;*/
+    padding: 0 2vw
+}
+
+.about .bottom div h4 {
+    margin: 2vw 0 1vw;
+    font-size: 4vw
+}
+
+.about .bottom div p {
+    font-size: 3vw;
+    text-transform: none;
+    text-align: left;
+    font-weight: 400;
+    color: #000
+}
+
+.children .bottom {
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../../images/children_mobile.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../../images/children_mobile.jpg);
+    background-position: 20% 10%
+}
+
+.adult .bottom, .business .bottom, .children .bottom {
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+.adult .bottom {
+    background-position: 0 0, 20% 0;
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../../images/ledi_mobile.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../../images/ledi_mobile.jpg)
+}
+
+.business .bottom {
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../../images/man_mobile.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../../images/man_mobile.jpg)
+}
+
+.contacts .bottom {
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+.contacts .bottom p {
+    font-size: 4vw;
+    color: #052825;
+    width: 90%;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.contacts .top {
+    background-color: #129e92
+}
+
+.contacts h1 {
+    color: #fff;
+    margin: auto 0
+}
+
+.contacts .move {
+    /*margin-bottom: 2vw*/
+}
+
+.contacts .bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    padding: 0 10%
+}
+
+.contacts .bottom h2 {
+    position: relative;
+    color: #052825;
+    top: 0;
+    margin: 0;
+
+}
+
+.bottom form, .contacts .bottom, .social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.social {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 20%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.social a {
+    height: 100%;
+    width: 100%
+}
+
+.social img {
+    height: 40%;
+}
+
+.bottom form {
+    width: 80%;
+    height: 80%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    margin: 0 auto 5vh;
+    padding: 0;
+}
+
+.bottom form fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.2s ease;}
+::-moz-placeholder                {opacity: 1; transition: opacity 0.2s ease;}
+:-moz-placeholder                 {opacity: 1; transition: opacity 0.2s ease;}
+:-ms-input-placeholder            {opacity: 1; transition: opacity 0.2s ease;}
+:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.2s ease;}
+:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.2s ease;}
+:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.2s ease;}
+:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.2s ease;}
+::-webkit-input-placeholder {color: rgba(18, 157, 145, .4);}
+::-moz-placeholder          {color: rgba(18, 157, 145, .4);}/* Firefox 19+ */
+:-moz-placeholder           {color: rgba(18, 157, 145, .4);}/* Firefox 18- */
+:-ms-input-placeholder      {color: rgba(18, 157, 145, .4);}
+
+.bottom form textarea,
+.bottom form input[type=text],
+.bottom form input[type=tel],
+.bottom form input[type=email]{
+    resize: none;
+    font-weight: 300;
+    width: 97.5%;
+    font-size: 1vw;
+    margin: 1vh auto;
+    padding: 0.5vw;
+    border: 1px solid #129e92;
+}
+
+.bottom form input[type=tel],
+.bottom form input[type=email] {
+    width: 46%;
+    display: inline-block;
+    float: right;
+}
+
+.bottom form input[type=email] {
+    float: left;
+}
+
+.bottom form input[type=submit] {
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+    width: 40%;
+    padding: 0.5vh 0;
+    font-size: 1vw;
+    color: #fff;
+    border: none;
+    background-color: #129e92;
+    opacity: .6;
+    float: right;
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out
+}
+
+input:focus, select:focus, textarea:focus, button:focus {
+    outline: none;
+}
+
+.bottom form input[type=submit]:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+form .error {
+    border: 1px solid #ea7349 !important;
+}
+
+form .warning {
+    border: 1px solid #EAD13A !important;
+}
+
+@media screen and (orientation: landscape) {
+    section:not(.main) {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex
+    }
+
+    .bottom, .top {
+        width: 50%;
+        height: 100%;
+        position: relative
+    }
+
+    .top h1 {
+        font-size: 7.5vw;
+    }
+
+    .directions h1 {
+        font-size: 7.5vw;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 25%;
+        text-align: center;
+        margin: auto
+    }
+
+    .directions .move {
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        bottom: 5%
+    }
+
+    .directions .bottom > p:not(.text) {
+        font-size: 3vh;
+        font-weight: 100;
+        position: absolute;
+        top: 35%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+        width: 90%;
+        max-width: 45vw
+    }
+
+    .honeycombs {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center
+    }
+
+    .move {
+        width: 90%
+    }
+
+    .move * {
+        font-size: 2vw
+    }
+
+    .honeycombs_container {
+        position: absolute;
+        top: 6vw;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 100%;
+        height: 30%
+    }
+
+    .cross {
+        width: 12.5vw;
+        height: 12.5vw;
+        left: calc(40% - 12.5vw / 2)
+    }
+
+    .cross:after, .cross:before {
+        height: 5vw;
+    }
+
+    .article {
+        border-left: 1px solid #000;
+        top: 45%;
+        height: 28%;
+        width: 95%
+    }
+
+    .article p, .bottom form textarea, .honeycomb div, .text {
+        font-size: 2vw
+    }
+
+    .text {
+        top: initial;
+        position: absolute;
+        bottom: 10%
+    }
+
+    .honeycomb {
+        width: 12.5vw;
+        height: 12.5vw
+    }
+
+    .top .honeycombs_container .honeycomb:first-child {
+        bottom: 4vw
+    }
+
+    .top .honeycombs_container .honeycomb:nth-child(2) {
+        bottom: -15vw;
+        left: 11vw
+    }
+
+    .top .honeycombs_container .honeycomb:last-child {
+        bottom: -15vw;
+        right: 11vw
+    }
+
+    .bottom h2 {
+        font-size: 3.5vw;
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        top: 10%;
+        margin: auto
+    }
+
+    .bottom .honeycombs_container .honeycomb:first-child {
+        bottom: -15vw
+    }
+
+    .bottom .honeycombs_container .honeycomb:nth-child(2) {
+        bottom: 4vw;
+        left: 11vw
+    }
+
+    .bottom .honeycombs_container .honeycomb:last-child {
+        bottom: 4vw;
+        right: 11vw
+    }
+}
+
+@media screen and (orientation: landscape) and (min-width: 1250px) {
+    .top h1 {
+        font-size: 5vw
+    }
+
+    .move * {
+        font-size: 2vw
+    }
+
+    .top .move {
+        width: 70%
+    }
+
+    .directions h1 {
+        font-size: 6vw;
+        top: 30%
+    }
+
+    .directions .move * {
+        font-size: 2vw
+    }
+
+    .adult .bottom > p, .business .bottom > p, .children .bottom > p {
+        font-size: 1.5vw;
+        top: 35%
+    }
+
+    .cross {
+        left: calc(40% - 7.5vw / 2)
+    }
+
+    .cross:after, .cross:before {
+        height: 2vw;
+        width: .2vw
+    }
+
+    .cross, .honeycomb {
+        width: 7.5vw;
+        height: 7.5vw
+    }
+
+    .honeycomb div {
+        font-size: 1.25vw
+    }
+
+    .top .honeycombs_container .honeycomb:first-child {
+        bottom: 1vw
+    }
+
+    .top .honeycombs_container .honeycomb:nth-child(2) {
+        bottom: -10vw;
+        left: 6.5vw
+    }
+
+    .top .honeycombs_container .honeycomb:last-child {
+        bottom: -10vw;
+        right: 6.5vw
+    }
+
+    .bottom .honeycombs_container .honeycomb:first-child {
+        bottom: -10vw
+    }
+
+    .bottom .honeycombs_container .honeycomb:nth-child(2) {
+        bottom: 1vw;
+        left: 6.5vw
+    }
+
+    .bottom .honeycombs_container .honeycomb:last-child {
+        bottom: 1vw;
+        right: 6.5vw
+    }
+
+    .bottom h2 {
+        font-size: 2vw;
+        top: 20%
+    }
+
+    .directions .bottom p {
+        font-size: 1.5vw;
+        top: initial;
+        bottom: 3vw
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .main {
+        background-position: center;
+        background-size: 65%
+    }
+
+    .main .move {
+        top: 77.5%;
+        width: 50%
+    }
+
+    .main .move * {
+        font-size: 3vw
+    }
+
+    .address {
+        top: 80%;
+        font-size: 2vw
+    }
+}
+
+@media screen and (orientation: landscape) and (min-width: 1250px) {
+    .main {
+        background-size: 50%
+    }
+
+    .main .move {
+        top: 77.5%;
+        width: 40%
+    }
+
+    .main .move * {
+        font-size: 2.25vw
+    }
+
+    .address {
+        top: 80%;
+        font-size: 1.5vw
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .about .top > a, .contacts .top > a {
+        font-size: 4vw;
+        margin-bottom: 5vh
+    }
+
+    .about .bottom div h4 {
+        font-size: 2.5vw
+    }
+
+    .about .bottom div p {
+        font-size: 2vw
+    }
+}
+
+@media screen and (orientation: landscape) and (min-width: 1250px) {
+    .about .bottom div h4 {
+        font-size: 1.25vw
+    }
+
+    .about .bottom div p {
+        font-size: 1vw
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .contacts .bottom {
+        padding: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start
+    }
+
+    .contacts .bottom * {
+        width: 90%
+    }
+
+    .contacts .bottom p {
+        font-size: 2.5vw
+    }
+
+    .contacts .bottom div {
+        height: 30%;
+        width: 30%;
+        -ms-flex-item-align: start;
+        align-self: flex-start
+    }
+
+    .contacts .bottom div a {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center
+    }
+
+    .contacts .bottom form {
+        height: 40%
+    }
+
+    .contacts .bottom form textarea {
+        width: 97.5%
+    }
+}
+
+@media screen and (orientation: landscape) and (min-width: 1250px) {
+    .contacts .bottom form input[type=submit], .contacts .bottom p {
+        font-size: 1.5vw
+    }
+
+    .contacts .bottom div {
+        width: 30%;
+        height: 30%
+    }
+}
+
+body * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+

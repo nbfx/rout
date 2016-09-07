@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1, user-scalable=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="{{ base_url() }}/static/js/jquery.fullPage.min.js"></script>
+    <script src="{{ base_url() }}/static/js/serialize.min.js"></script>
+    <!-- smoosh -->
+    <!-- build:css css/main.css -->
+    <link rel="stylesheet" href="{{ base_url() }}/static/css/main/main.css">
+    <link rel="stylesheet" href="{{ base_url() }}/static/css/jquery.fullPage.css">
+    <!-- endbuild -->
+    <!-- endsmoosh -->
+    <title>{{ page.title }}</title>
+</head>
+<body>
+{% block body %}
+<div id="fullpage">
+    {% for sectionGroup in page.children %}
+        {% if sectionGroup.name == 'main' %}
+            <section class="{{ sectionGroup.classes }} scrolling section" id="{{ sectionGroup.name }}">
+                {#{% include 'parts/urls.html.twig' %}
+                <p class="address" id="address">
+                    Новосибирск<br>2016
+                </p>#}
+            </section>
+        {% endif %}
+    {% endfor %}
+    {% for sectionGroup in page.children %}
+        {% if sectionGroup.name == 'about' %}
+            <section class="{{ sectionGroup.classes }} scrolling section" data-anchor="{{ sectionGroup.name }}">
+                <div class="top">
+                    <h1>{{ sectionGroup.title }}</h1>
+                    {% include 'parts/urls.html.twig' %}
+                    <a href="blog">блог проекта >>></a>
+                </div>
+                <div class="bottom">
+                    <div class="scrollable">
+                        {{ sectionGroup.body | raw }}
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+        {% if sectionGroup.name == 'directions' %}
+            {% for section in sectionGroup.children %}
+                <section class="{{ sectionGroup.classes }} {{ section.classes }} scrolling section" data-anchor="{{ section.name }}">
+                    {% include 'parts/cross.html.twig' %}
+                    <div class="top honeycombs">
+                        <h1 class="directions_title">{{ sectionGroup.title }}</h1>
+                        {% include 'parts/topHoneycombs.html.twig' %}
+                        {% include 'parts/urls.html.twig' %}
+                    </div>
+                    <div class="bottom">
+                        <h2>{{ section.title }}</h2>
+                        {{ section.description | raw }}
+                        {% include 'parts/bottomHoneycombs.html.twig' %}
+                        {{ section.body | raw }}
+                    </div>
+                </section>
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+    {% for sectionGroup in page.children %}
+        {% if sectionGroup.name == 'contacts' %}
+            <section class="{{ sectionGroup.classes }} scrolling section" data-anchor="{{ sectionGroup.name }}">
+                <div class="top">
+                    <h1>{{ sectionGroup.title }}</h1>
+                    {% include 'parts/urls.html.twig' %}
+                    <a href="blog">блог проекта >>></a>
+                </div>
+                <div class="bottom padding-text">
+                    {{ sectionGroup.body | raw }}
+                </div>
+            </section>
+        {% endif %}
+    {% endfor %}
+</div>
+<script src="/static/js/main.js"></script>
+{% endblock body %}
+</body>
+</html>

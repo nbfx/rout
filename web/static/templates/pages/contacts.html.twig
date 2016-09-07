@@ -1,0 +1,10 @@
+{% extends 'sectionLayout.html.twig' %}
+
+{% block top %}
+    {{ page.title }}
+    {{ parent() }}
+{% endblock %}
+
+{% block bottom %}
+    {{ page.body | raw }}
+{% endblock %}

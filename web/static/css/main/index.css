@@ -1,0 +1,23 @@
+@import "_@font_face.css";
+@import "_scroll.css";
+
+
+@import "mobile/_base.css";
+@import "mobile/_main.css";
+@import "mobile/_about.css";
+@import "mobile/_children.css";
+@import "mobile/_adult.css";
+@import "mobile/_business.css";
+@import "mobile/_contacts.css";
+
+@import "desktop/_base.css";
+@import "desktop/_main.css";
+@import "desktop/_about.css";
+@import "desktop/_contacts.css";
+
+body *{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

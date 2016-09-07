@@ -1,0 +1,236 @@
+@media screen and (orientation: landscape) {
+    section:not(.main) {
+        display: flex;
+    }
+
+    .top, .bottom{
+        width: 50%;
+        height: 100%;
+        position: relative;
+    }
+
+    .top h1 {
+        font-size: 7.5vw;
+    }
+
+    .children h1, .adult h1, .business h1 {
+        font-size: 7.5vw;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 20%;
+        text-align: center;
+        margin: auto;
+    }
+
+    .children .move, .adult .move, .business .move {
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        bottom: 10%;
+    }
+
+    .children .bottom>p:not(.text), .adult .bottom>p:not(.text), .business .bottom>p:not(.text) {
+        font-size: 2vw;
+        position: absolute;
+        top: 25%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+        width: 90%;
+        max-width: 45vw;
+    }
+
+    .honeycombs {
+        justify-content: center;
+    }
+
+    .move {
+        width: 90%;
+    }
+
+    .move * {
+        font-size: 2.5vw;
+    }
+
+    .honeycombs_container {
+        position: absolute;
+        top: 6vw;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 100%;
+        height: 30%;
+    }
+
+    .cross {
+        width: 12.5vw;
+        height: 12.5vw;
+        left: calc(40% - 12.5vw/2);
+    }
+
+    .cross:before, .cross:after {
+        height: 5vw;
+    }
+
+    .article {
+        border-left: 1px solid black;
+        top: 45%;
+        height: 28%;
+        width: 95%;
+    }
+
+    .article p {
+        font-size: 2vw;
+    }
+
+    .text {
+        top: initial;
+        position: absolute;
+        bottom: 10%;
+        font-size: 2vw;
+    }
+
+    .honeycomb {
+        width: 12.5vw;
+        height: 12.5vw;
+    }
+
+    .honeycomb div {
+        font-size: 2vw;
+    }
+
+    .top .honeycombs_container .honeycomb:first-child {
+        bottom: 4vw;
+    }
+
+    .top .honeycombs_container .honeycomb:nth-child(2) {
+        bottom: -15vw;
+        left: 11vw;
+    }
+
+    .top .honeycombs_container .honeycomb:last-child {
+        bottom: -15vw;
+        right: 11vw;
+    }
+
+    .bottom h2 {
+        font-size: 3.5vw;
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        top: 10%;
+        margin: auto;
+    }
+
+    .bottom .honeycombs_container .honeycomb:first-child {
+        bottom: -15vw;
+    }
+
+    .bottom .honeycombs_container .honeycomb:nth-child(2) {
+        bottom: 4vw;
+        left: 11vw;
+    }
+
+    .bottom .honeycombs_container .honeycomb:last-child {
+        bottom: 4vw;
+        right: 11vw;
+    }
+
+    .bottom form textarea {
+        font-size: 2vw;
+    }
+}
+
+
+
+
+
+
+@media screen and (orientation: landscape) and (min-width: 1250px) {
+    .top h1 {
+        font-size: 5vw;
+    }
+
+    .move * {
+        font-size: 2vw;
+    }
+
+    .top .move {
+        width: 70%;
+    }
+
+    .children h1, .adult h1, .business h1 {
+        font-size: 6vw;
+        top: 30%;
+    }
+
+    .children .move, .adult .move, .business .move {
+    }
+
+    .children .move *, .adult .move *, .business .move * {
+        font-size: 2.25vw;
+    }
+
+    .children .bottom>p, .adult .bottom>p, .business .bottom>p {
+        font-size: 1.5vw;
+        top: 35%;
+    }
+
+    .cross {
+        width: 7.5vw;
+        height: 7.5vw;
+        left: calc(40% - 7.5vw/2);
+    }
+
+    .cross:before, .cross:after {
+        height: 3vw;
+        width: .3vw;
+    }
+
+    .honeycomb {
+        width: 7.5vw;
+        height: 7.5vw;
+    }
+
+    .honeycomb div {
+        font-size: 1.25vw;
+    }
+
+    .top .honeycombs_container .honeycomb:first-child {
+        bottom: 1vw;
+    }
+
+    .top .honeycombs_container .honeycomb:nth-child(2) {
+        bottom: -10vw;
+        left: 6.5vw;
+    }
+
+    .top .honeycombs_container .honeycomb:last-child {
+        bottom: -10vw;
+        right: 6.5vw;
+    }
+    .bottom .honeycombs_container .honeycomb:first-child {
+        bottom: -10vw;
+    }
+
+    .bottom .honeycombs_container .honeycomb:nth-child(2) {
+        bottom: 1vw;
+        left: 6.5vw;
+    }
+
+    .bottom .honeycombs_container .honeycomb:last-child {
+        bottom: 1vw;
+        right: 6.5vw;
+    }
+
+    .bottom h2 {
+        font-size: 2vw;
+        top: 20%;
+    }
+}
+
